@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
 })
 
 app.get('/e2e-001_', function(request, response) {
-  response.sendFile(path.join(__dirname+'/index.html'));
+  response.sendFile('index.html')
 })
 
 app.listen(app.get('port'), function() {
