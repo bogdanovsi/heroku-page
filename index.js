@@ -1,11 +1,12 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const path = require('path');
+const app = express();
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.sendFile('index.html')
+  response.sendFile(path.join(__dirname + '/index.html'));
 })
 
 app.get('/e2e-001_', function(request, response) {
