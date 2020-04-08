@@ -10,9 +10,6 @@
   "dependencies": {
     "express": "^4.13.3"
   },
-  "engines": {
-    "node": "4.0.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/heroku/node-js-sample"
@@ -22,9 +19,6 @@
     "heroku",
     "express"
   ],
-  "author": "Mark Pundsack",
-  "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
-  ],
+  "author": "bogdanovsi",
   "license": "MIT"
 }
