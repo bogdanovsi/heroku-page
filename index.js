@@ -9,6 +9,10 @@ app.get('/', function(request, response) {
   response.send('hello itmo');
 })
 
+app.get('/crypto-lab', function(request, response) {
+  response.sendFile(path.join(__dirname, 'labs', 'crypto', 'answer'))
+})
+
 app.get('e2e-001.js', function(request, response) {
   response.sendFile(path.join(__dirname, '/e2e-001.js'))
 })
