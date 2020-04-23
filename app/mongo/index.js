@@ -1,7 +1,6 @@
 module.exports.findDocuments = function findDocuments(db, callback) {
-    // Get the documents collection
-    const collection = db.collection('documents');
-    // Find some documents
+    const collection = db.collection('books');
+    
     collection.find({'a': 3}).toArray(function(err, docs) {
       console.log("Found the following records");
       console.log(docs);

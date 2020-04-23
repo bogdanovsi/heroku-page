@@ -24,10 +24,14 @@ app.get('/', function(request, response) {
 })
 
 app.get('/book/:name', function(request, response) {
+  console.log(request.params.name);
+
   findOneBook(request.params.name, (book) => {
     response.send(book);
   })
 })
+
+app.get('/')
 
 app.get('/crypto-lab', function(request, response) {
   response.sendFile(path.join(__dirname, 'labs', 'crypto', 'answer'))

@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Contracts = new Schema({
+const Contract = new Schema({
+    writer: { type: Schema.Types.ObjectId, ref: 'Writer' },
     number_contract: Number,
     created: Date,
     expiration_date: Date,
     annulment: Boolean,
     annulment_date: Date,
-});
-Contracts.method({});
-Contracts.static({});
+}, { collection: 'contracts' });
+Contract.method({});
+Contract.static({});
 
-mongoose.model('Contracts', Contracts);
+mongoose.model('Contract', Contract);
