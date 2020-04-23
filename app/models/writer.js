@@ -13,5 +13,4 @@ const Writer = new Schema({
 Writer.method({});
 Writer.static({});
 
-mongoose.model('Writer', Writer);
-
+module.exports = mongoose.model('Writer', Writer);

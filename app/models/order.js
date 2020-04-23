@@ -13,5 +13,4 @@ const Order = new Schema({
 Order.method({});
 Order.static({});
 
-mongoose.model('Order', Order);
-
+module.exports = mongoose.model('Order', Order);

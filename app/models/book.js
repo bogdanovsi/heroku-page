@@ -18,4 +18,4 @@ const Book = new Schema(
 Book.method({});
 Book.static({});
 
-mongoose.model('Book', Book);
+module.exports = mongoose.model('Book', Book);

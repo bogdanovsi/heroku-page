@@ -11,5 +11,4 @@ const Customer = new Schema({
 Customer.method({});
 Customer.static({});
 
-mongoose.model('Customer', Customer);
-
+module.exports = mongoose.model('Customer', Customer);
