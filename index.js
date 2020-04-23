@@ -26,9 +26,11 @@ app.get('/', function(request, response) {
 app.get('/book/:name', function(request, response) {
   console.log(request.params.name);
 
-  findOneBook(request.params.name, (book) => {
-    response.send(book);
-  })
+  // findOneBook(request.params.name, (book) => {
+  //   response.send(book);
+  // })
+
+  response.send(await findOneBook(request.params.name));
 })
 
 app.get('/')
