@@ -2,11 +2,31 @@ const express = require('express')
 const path = require('path');
 const app = express();
 
+const { findDocuments } = require('./app/mongo');
+const { findOneBook } = require('./app/mongo/mongoose');
+
+const MongoClient = require('mongodb').MongoClient;
+// Connection URL
+const url = 'mongodb://127.0.0.1:27017';
+const dbName = 'myproject';
+
+const client = new MongoClient(url, { useUnifiedTopology: true });
+var db = null;
+client.connect(function(err) {
+    db = client.db(dbName);
+});
+
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send('hello itmo');
+  response.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
+
+app.get('/book/:name', function(request, response) {
+  findOneBook(request.params.name, (book) => {
+    response.send(book);
+  })
 })
 
 app.get('/crypto-lab', function(request, response) {
@@ -18,7 +38,7 @@ app.get('e2e-001.js', function(request, response) {
 })
 
 app.get('/e2e-001_', function(request, response) {
-  response.sendFile(path.join(__dirname, '/index.html'))
+  response.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 app.listen(app.get('port'), function() {

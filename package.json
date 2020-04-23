@@ -23,6 +23,6 @@
   "author": "bogdanovsi",
   "license": "MIT",
   "devDependencies": {
-    "mongoose": "^5.9.9"
+    "mongoose": "^5.9.10"
   }
 }
